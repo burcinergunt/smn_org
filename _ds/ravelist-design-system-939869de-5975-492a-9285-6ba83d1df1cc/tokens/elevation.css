@@ -1,0 +1,16 @@
+/* ============================================================
+   RAVELIST · ELEVATION · subtle, warm shadows
+   ============================================================ */
+
+:root {
+  --rl-shadow-card: 0 1px 3px rgba(0,0,0,.06);
+  --rl-shadow-pop:  0 8px 24px rgba(0,0,0,.12);
+  --rl-shadow-fab:  0 6px 16px rgba(83,74,183,.45);  /* Log FAB glow */
+
+  /* Protection scrims over imagery (immersive feed / hero photos) */
+  --rl-scrim-top:    linear-gradient(to bottom, rgba(0,0,0,.45), transparent); /* @kind other */
+  --rl-scrim-bottom: linear-gradient(to bottom, transparent, rgba(0,0,0,.78) 42%); /* @kind other */
+
+  /* Glass action button over photo */
+  --rl-glass: rgba(255,255,255,.16);
+}

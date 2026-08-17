@@ -1,0 +1,26 @@
+/* ============================================================
+   RAVELIST · SPACING TOKENS · base unit 4px
+   ============================================================ */
+
+:root {
+  --rl-space-1:  4px;
+  --rl-space-2:  8px;
+  --rl-space-3:  12px;
+  --rl-space-4:  16px;
+  --rl-space-5:  20px;
+  --rl-space-6:  24px;
+  --rl-space-8:  32px;
+  --rl-space-10: 40px;
+  --rl-space-12: 48px;
+
+  /* Layout semantics */
+  --rl-screen-margin: 16px;  /* left/right gutters */
+  --rl-card-padding:  16px;
+  --rl-card-gap:      14px;  /* between feed cards */
+
+  /* Fixed chrome */
+  --rl-statusbar-h: 44px;
+  --rl-header-h:    54px;
+  --rl-tabbar-h:    56px;
+  --rl-fab-size:    54px;
+}

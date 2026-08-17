@@ -1,0 +1,346 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/badges/**",
+              "components/core/**",
+              "components/feed/**",
+              "components/navigation/**",
+              "ui_kits/app/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Inter))/i]",
+        "message": "Font not provided by the design system. Available: Inter."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ActionRail'] > JSXAttribute > JSXIdentifier[name!=/^(?:likes|liked|saved|onLike|onSave|onShare|style|key|ref|className|style|children)$/]",
+        "message": "<ActionRail> doesn't accept that prop. Declared props: likes, liked, saved, onLike, onSave, onShare, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Avatar'] > JSXAttribute > JSXIdentifier[name!=/^(?:initial|src|category|size|style|key|ref|className|style|children)$/]",
+        "message": "<Avatar> doesn't accept that prop. Declared props: initial, src, category, size, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|fullWidth|leadingIcon|disabled|onClick|children|style|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, fullWidth, leadingIcon, disabled, onClick, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary|ghost)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'secondary' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CategoryChip'] > JSXAttribute > JSXIdentifier[name!=/^(?:category|dark|onPhoto|dot|style|key|ref|className|style|children)$/]",
+        "message": "<CategoryChip> doesn't accept that prop. Declared props: category, dark, onPhoto, dot, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FeedExperience'] > JSXAttribute > JSXIdentifier[name!=/^(?:category|mood|title|context|photoLabel|photoSrc|user|likes|key|ref|className|style|children)$/]",
+        "message": "<FeedExperience> doesn't accept that prop. Declared props: category, mood, title, context, photoLabel, photoSrc, user, likes."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Icon'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|size|filled|color|strokeWidth|style|key|ref|className|style|children)$/]",
+        "message": "<Icon> doesn't accept that prop. Declared props: name, size, filled, color, strokeWidth, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MoodPill'] > JSXAttribute > JSXIdentifier[name!=/^(?:mood|size|selected|count|style|key|ref|className|style|children)$/]",
+        "message": "<MoodPill> doesn't accept that prop. Declared props: mood, size, selected, count, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MoodPill'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<MoodPill> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SegmentedToggle'] > JSXAttribute > JSXIdentifier[name!=/^(?:options|value|onChange|variant|style|key|ref|className|style|children)$/]",
+        "message": "<SegmentedToggle> doesn't accept that prop. Declared props: options, value, onChange, variant, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SegmentedToggle'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:surface|overlay)$/]",
+        "message": "<SegmentedToggle> variant must be one of 'surface' | 'overlay'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TabBar'] > JSXAttribute > JSXIdentifier[name!=/^(?:active|dark|onTab|onLog|style|key|ref|className|style|children)$/]",
+        "message": "<TabBar> doesn't accept that prop. Declared props: active, dark, onTab, onLog, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "ActionRail": {
+        "replaces": []
+      },
+      "Avatar": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "CategoryChip": {
+        "replaces": []
+      },
+      "FeedExperience": {
+        "replaces": []
+      },
+      "Icon": {
+        "replaces": []
+      },
+      "MoodPill": {
+        "replaces": []
+      },
+      "SegmentedToggle": {
+        "replaces": []
+      },
+      "TabBar": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--rl-bg",
+      "--rl-body-lh",
+      "--rl-body-ls",
+      "--rl-body-size",
+      "--rl-books-50",
+      "--rl-books-500",
+      "--rl-books-900",
+      "--rl-border",
+      "--rl-border-strong",
+      "--rl-caption-lh",
+      "--rl-caption-ls",
+      "--rl-caption-size",
+      "--rl-card-gap",
+      "--rl-card-padding",
+      "--rl-coal",
+      "--rl-display-lh",
+      "--rl-display-ls",
+      "--rl-display-size",
+      "--rl-fab-size",
+      "--rl-film-50",
+      "--rl-film-500",
+      "--rl-film-900",
+      "--rl-font",
+      "--rl-food-50",
+      "--rl-food-500",
+      "--rl-food-900",
+      "--rl-glass",
+      "--rl-header-h",
+      "--rl-headline-lh",
+      "--rl-headline-ls",
+      "--rl-headline-size",
+      "--rl-ink",
+      "--rl-ink-faint",
+      "--rl-ink-muted",
+      "--rl-ink-on-dark-faint",
+      "--rl-ink-on-dark-muted",
+      "--rl-label-lh",
+      "--rl-label-size",
+      "--rl-like",
+      "--rl-meta-lh",
+      "--rl-meta-size",
+      "--rl-mood-fill",
+      "--rl-mood-life-fill",
+      "--rl-mood-life-text",
+      "--rl-mood-text",
+      "--rl-music-50",
+      "--rl-music-500",
+      "--rl-music-900",
+      "--rl-on-primary",
+      "--rl-other-50",
+      "--rl-other-500",
+      "--rl-other-900",
+      "--rl-primary",
+      "--rl-primary-press",
+      "--rl-products-50",
+      "--rl-products-500",
+      "--rl-products-900",
+      "--rl-purple-50",
+      "--rl-purple-500",
+      "--rl-purple-700",
+      "--rl-purple-900",
+      "--rl-radius-card",
+      "--rl-radius-chip",
+      "--rl-radius-frame",
+      "--rl-radius-full",
+      "--rl-radius-input",
+      "--rl-radius-pill",
+      "--rl-sand",
+      "--rl-screen-margin",
+      "--rl-scrim-bottom",
+      "--rl-scrim-top",
+      "--rl-shadow-card",
+      "--rl-shadow-fab",
+      "--rl-shadow-pop",
+      "--rl-space-1",
+      "--rl-space-10",
+      "--rl-space-12",
+      "--rl-space-2",
+      "--rl-space-3",
+      "--rl-space-4",
+      "--rl-space-5",
+      "--rl-space-6",
+      "--rl-space-8",
+      "--rl-statusbar-h",
+      "--rl-surface",
+      "--rl-tab-active",
+      "--rl-tab-inactive",
+      "--rl-tabbar-h",
+      "--rl-text",
+      "--rl-text-faint",
+      "--rl-text-muted",
+      "--rl-title-lh",
+      "--rl-title-ls",
+      "--rl-title-size",
+      "--rl-travel-50",
+      "--rl-travel-500",
+      "--rl-travel-900",
+      "--rl-weight-medium",
+      "--rl-weight-regular",
+      "--rl-white"
+    ],
+    "tokenKinds": {
+      "--rl-purple-50": "color",
+      "--rl-purple-500": "color",
+      "--rl-purple-700": "color",
+      "--rl-purple-900": "color",
+      "--rl-food-50": "color",
+      "--rl-food-500": "color",
+      "--rl-food-900": "color",
+      "--rl-film-50": "color",
+      "--rl-film-500": "color",
+      "--rl-film-900": "color",
+      "--rl-travel-50": "color",
+      "--rl-travel-500": "color",
+      "--rl-travel-900": "color",
+      "--rl-music-50": "color",
+      "--rl-music-500": "color",
+      "--rl-music-900": "color",
+      "--rl-books-50": "color",
+      "--rl-books-500": "color",
+      "--rl-books-900": "color",
+      "--rl-products-50": "color",
+      "--rl-products-500": "color",
+      "--rl-products-900": "color",
+      "--rl-other-50": "color",
+      "--rl-other-500": "color",
+      "--rl-other-900": "color",
+      "--rl-white": "color",
+      "--rl-sand": "color",
+      "--rl-ink": "color",
+      "--rl-coal": "color",
+      "--rl-ink-muted": "color",
+      "--rl-ink-faint": "color",
+      "--rl-ink-on-dark-muted": "color",
+      "--rl-ink-on-dark-faint": "color",
+      "--rl-like": "color",
+      "--rl-bg": "color",
+      "--rl-surface": "color",
+      "--rl-text": "font",
+      "--rl-text-muted": "font",
+      "--rl-text-faint": "font",
+      "--rl-border": "color",
+      "--rl-border-strong": "color",
+      "--rl-primary": "color",
+      "--rl-primary-press": "color",
+      "--rl-on-primary": "color",
+      "--rl-tab-active": "color",
+      "--rl-tab-inactive": "color",
+      "--rl-mood-fill": "color",
+      "--rl-mood-text": "font",
+      "--rl-mood-life-fill": "color",
+      "--rl-mood-life-text": "font",
+      "--rl-font": "font",
+      "--rl-weight-regular": "font",
+      "--rl-weight-medium": "font",
+      "--rl-display-size": "spacing",
+      "--rl-display-lh": "font",
+      "--rl-display-ls": "spacing",
+      "--rl-title-size": "spacing",
+      "--rl-title-lh": "font",
+      "--rl-title-ls": "spacing",
+      "--rl-headline-size": "spacing",
+      "--rl-headline-lh": "font",
+      "--rl-headline-ls": "spacing",
+      "--rl-body-size": "spacing",
+      "--rl-body-lh": "font",
+      "--rl-body-ls": "font",
+      "--rl-label-size": "spacing",
+      "--rl-label-lh": "font",
+      "--rl-meta-size": "spacing",
+      "--rl-meta-lh": "font",
+      "--rl-caption-size": "spacing",
+      "--rl-caption-lh": "font",
+      "--rl-caption-ls": "spacing",
+      "--rl-space-1": "spacing",
+      "--rl-space-2": "spacing",
+      "--rl-space-3": "spacing",
+      "--rl-space-4": "spacing",
+      "--rl-space-5": "spacing",
+      "--rl-space-6": "spacing",
+      "--rl-space-8": "spacing",
+      "--rl-space-10": "spacing",
+      "--rl-space-12": "spacing",
+      "--rl-screen-margin": "spacing",
+      "--rl-card-padding": "spacing",
+      "--rl-card-gap": "spacing",
+      "--rl-statusbar-h": "spacing",
+      "--rl-header-h": "spacing",
+      "--rl-tabbar-h": "spacing",
+      "--rl-fab-size": "spacing",
+      "--rl-radius-card": "radius",
+      "--rl-radius-pill": "radius",
+      "--rl-radius-chip": "radius",
+      "--rl-radius-input": "radius",
+      "--rl-radius-full": "radius",
+      "--rl-radius-frame": "radius",
+      "--rl-shadow-card": "shadow",
+      "--rl-shadow-pop": "shadow",
+      "--rl-shadow-fab": "shadow",
+      "--rl-scrim-top": "other",
+      "--rl-scrim-bottom": "other",
+      "--rl-glass": "color"
+    },
+    "fontFamilies": [
+      "Inter"
+    ]
+  }
+}

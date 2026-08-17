@@ -1,0 +1,12 @@
+/* ============================================================
+   RAVELIST · RADIUS TOKENS
+   ============================================================ */
+
+:root {
+  --rl-radius-card:  12px;  /* feed cards, photo blocks, sheets */
+  --rl-radius-pill:  20px;  /* buttons, chips, mood pills, toggles */
+  --rl-radius-chip:  20px;
+  --rl-radius-input: 12px;
+  --rl-radius-full:  999px; /* avatars, circular action buttons */
+  --rl-radius-frame: 40px;  /* device screen corners (mockups) */
+}

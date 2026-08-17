@@ -1,0 +1,94 @@
+/* ============================================================
+   RAVELIST · COLOR TOKENS
+   Base palette + category system + mood + neutral surfaces,
+   then semantic aliases. Dark-mode aliases under [data-theme="dark"].
+   ============================================================ */
+
+:root {
+  /* ---- Brand purple ---- */
+  --rl-purple-50:  #EEEDFE;  /* light fill */
+  --rl-purple-500: #534AB7;  /* primary */
+  --rl-purple-700: #463E9E;  /* hover/press mid */
+  --rl-purple-900: #3C3489;  /* dark */
+
+  /* ---- Category · Food ---- */
+  --rl-food-50:  #F6E9E4;
+  --rl-food-500: #993C1D;
+  --rl-food-900: #3D1809;
+  /* ---- Category · Film ---- */
+  --rl-film-50:  #E2F1EC;
+  --rl-film-500: #0F6E56;
+  --rl-film-900: #062C22;
+  /* ---- Category · Travel ---- */
+  --rl-travel-50:  #F4EBDD;
+  --rl-travel-500: #854F0B;
+  --rl-travel-900: #352004;
+  /* ---- Category · Music ---- */
+  --rl-music-50:  #F6E5EA;
+  --rl-music-500: #993556;
+  --rl-music-900: #3D1522;
+  /* ---- Category · Books ---- */
+  --rl-books-50:  #E2EDF6;
+  --rl-books-500: #185FA5;
+  --rl-books-900: #0A2642;
+  /* ---- Category · Products ---- */
+  --rl-products-50:  #E8F0E0;
+  --rl-products-500: #3B6D11;
+  --rl-products-900: #182C07;
+  /* ---- Category · Other ---- */
+  --rl-other-50:  #EDEDEC;
+  --rl-other-500: #5F5E5A;
+  --rl-other-900: #262624;
+
+  /* ---- Neutrals · warm ---- */
+  --rl-white:        #FFFFFF;
+  --rl-sand:         #F1EFE8;  /* light secondary surface */
+  --rl-ink:          #1A1918;  /* warm near-black (text + dark bg) */
+  --rl-coal:         #2C2C2A;  /* dark secondary surface */
+  --rl-ink-muted:    #6C6A64;
+  --rl-ink-faint:    #8A8780;
+  --rl-ink-on-dark-muted: #B6B3AC;
+  --rl-ink-on-dark-faint: #87847E;
+
+  /* ---- UI accent (not in brand spec — flagged) ---- */
+  --rl-like: #FF4D6D;  /* heart / liked state */
+
+  /* ============ SEMANTIC · LIGHT (default) ============ */
+  --rl-bg:            var(--rl-white);
+  --rl-surface:       var(--rl-sand);
+  --rl-text:          var(--rl-ink);
+  --rl-text-muted:    var(--rl-ink-muted);
+  --rl-text-faint:    var(--rl-ink-faint);
+  --rl-border:        rgba(0,0,0,.08);
+  --rl-border-strong: rgba(0,0,0,.35);
+
+  --rl-primary:        var(--rl-purple-500);
+  --rl-primary-press:  var(--rl-purple-900);
+  --rl-on-primary:     #FFFFFF;
+  --rl-tab-active:     var(--rl-purple-500);
+  --rl-tab-inactive:   #9B9892;
+
+  /* Mood pills — life-changing is the only inverted one */
+  --rl-mood-fill:        var(--rl-purple-50);
+  --rl-mood-text:        var(--rl-purple-900);
+  --rl-mood-life-fill:   var(--rl-purple-500);
+  --rl-mood-life-text:   var(--rl-purple-50);
+}
+
+/* ============ SEMANTIC · DARK ============ */
+[data-theme="dark"] {
+  --rl-bg:            var(--rl-ink);
+  --rl-surface:       var(--rl-coal);
+  --rl-text:          #FFFFFF;
+  --rl-text-muted:    var(--rl-ink-on-dark-muted);
+  --rl-text-faint:    var(--rl-ink-on-dark-faint);
+  --rl-border:        rgba(255,255,255,.08);
+  --rl-border-strong: rgba(255,255,255,.40);
+
+  --rl-tab-active:    #9B8CFF;  /* lifted purple for contrast on warm dark */
+  --rl-tab-inactive:  #6F6D68;
+
+  /* Mood pills keep the same light fill — pops on warm dark */
+  --rl-mood-fill:     var(--rl-purple-50);
+  --rl-mood-text:     var(--rl-purple-900);
+}

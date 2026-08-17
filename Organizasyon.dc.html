@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/ravelist-design-system-939869de-5975-492a-9285-6ba83d1df1cc/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/ravelist-design-system-939869de-5975-492a-9285-6ba83d1df1cc/tokens/colors.css">
+<link rel="stylesheet" href="_ds/ravelist-design-system-939869de-5975-492a-9285-6ba83d1df1cc/tokens/typography.css">
+<link rel="stylesheet" href="_ds/ravelist-design-system-939869de-5975-492a-9285-6ba83d1df1cc/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/ravelist-design-system-939869de-5975-492a-9285-6ba83d1df1cc/tokens/radius.css">
+<link rel="stylesheet" href="_ds/ravelist-design-system-939869de-5975-492a-9285-6ba83d1df1cc/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/ravelist-design-system-939869de-5975-492a-9285-6ba83d1df1cc/styles.css">
+<script src="_ds/ravelist-design-system-939869de-5975-492a-9285-6ba83d1df1cc/_ds_bundle.js"></script>
+<style>
+  html, body { margin:0; padding:0; background:#131211; }
+  * { -webkit-tap-highlight-color: transparent; }
+  a { color:#00F134; text-decoration:none; }
+  a:hover { color:#7CFFA3; }
+  ::selection { background:#00F134; color:#131211; }
+</style>
+</helmet>
+
+<div lang="tr" style="min-height:100vh; background:#131211; color:#FFFFFF; font-family:Inter, system-ui, sans-serif; font-weight:400; -webkit-font-smoothing:antialiased; display:flex; justify-content:center;">
+  <div style="width:100%; max-width:620px; padding:40px 22px 96px; box-sizing:border-box;">
+
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+      <div>
+        <img src="spine-logo.svg" alt="Spine Media Network" style="width:158px; height:auto; display:block; margin-bottom:44px;">
+
+        <div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#00F134; margin-bottom:16px;">Yeni organizasyon</div>
+
+        <h1 style="font-size:29px; line-height:1.22; letter-spacing:-.025em; font-weight:500; margin:0 0 22px; text-wrap:pretty;">Spine Media Network yeni organizasyon</h1>
+
+        <div style="font-size:16px; line-height:1.65; color:#B6B3AC; display:flex; flex-direction:column; gap:16px; text-wrap:pretty;">
+          <p style="margin:0;">Merhaba,</p>
+          <p style="margin:0;">Hepinizin de bildiği gibi çok yakın zamanda bir birleşme yaşadık. Bu birleşme sonucu en yüksek verimlilikle çalışabilmek için de organizasyonumuzu yedi ana fonksiyonda topluyoruz: Yönetim, İçerik, Yapım/Yayın ve İletişim, Operasyon, Ürün Yönetimiz, UI / UX ve Reklam Satış. Amacımız karmaşayı azaltmak olduğu için kimin neye karar verdiği, kimin kime destek olduğunu ilk bakışta herkes anlasın istiyoruz.</p>
+          <p style="margin:0;">Aşağıda doğrudan bana rapor eden yöneticileri bulacaksınız. Her isme dokunarak rolün temel amacını, sorumluluklarını ve iletişim bilgilerini görebilirsiniz. Oradan da bana direkt rapor eden arkadaşlarımın ekiplerine ulaşabilirsiniz.<br><br>Her zaman olduğu gibi işlerimizi düzgün yapmaya devam edeceğimiz, yüksek verimli ve motivasyonlu bu yeni dönem hepimize hayırlı olsun.<br><br>Yeni öğrendiğim ve çok sevdiğim bir Adem abi sözüyle bitiriyorum:<br><br>"Tedbir, tanzim ve takip ricasıyla"<br><br>BURCIN</p>
+        </div>
+
+        <div style="height:1px; background:rgba(255,255,255,.10); margin:40px 0 34px;"></div>
+
+        <div style="display:flex; flex-direction:column; gap:34px;">
+          <sc-for list="{{ groups }}" as="g" hint-placeholder-count="5">
+            <div>
+              <div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#87847E; margin-bottom:4px;">{{ g.label }}</div>
+              <div style="display:flex; flex-direction:column;">
+                <sc-for list="{{ g.people }}" as="p" hint-placeholder-count="3">
+                  <a href="{{ p.href }}" style="display:flex; align-items:baseline; justify-content:space-between; gap:14px; padding:15px 0; border-bottom:1px solid rgba(255,255,255,.08); color:#FFFFFF;" style-hover="color:#00F134;">
+                    <span style="display:flex; flex-direction:column; gap:3px;">
+                      <span style="font-size:16px; font-weight:500; letter-spacing:-.01em;">{{ p.name }}</span>
+                      <span style="font-size:13.5px; color:#87847E; line-height:1.45;">{{ p.roleLine }}</span>
+                    </span>
+                    <span style="font-size:13px; color:#4E4C48;">↗</span>
+                  </a>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="height:1px; background:rgba(255,255,255,.10); margin:40px 0 34px;"></div>
+
+        <div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#87847E; margin-bottom:14px;">Sorular</div>
+        <p style="margin:0 0 18px; font-size:16px; line-height:1.65; color:#B6B3AC; text-wrap:pretty;">Aklına takılan her şeyi sorabilirsin — yapıyı birlikte oturtacağız. Bana doğrudan yaz ya da yöneticinle konuş.</p>
+        <div style="display:flex; flex-direction:column; gap:10px; font-size:15px;">
+          <a href="mailto:burcin.ergunt@thisisspine.com">burcin.ergunt@thisisspine.com</a>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isPerson }}">
+      <div>
+        <a href="#" style="display:inline-block; font-size:13px; color:#87847E; margin-bottom:36px;" style-hover="color:#00F134;">← Organizasyon</a>
+
+        <div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#00F134; margin-bottom:14px;">{{ person.groupLabel }}</div>
+        <h1 style="font-size:27px; line-height:1.2; letter-spacing:-.025em; font-weight:500; margin:0 0 8px;">{{ person.name }}</h1>
+        <div style="font-size:16px; color:#B6B3AC; line-height:1.5;">{{ person.role }}</div>
+        <sc-if value="{{ person.hasScope }}">
+          <div style="font-size:13px; color:#87847E; margin-top:6px;">{{ person.scope }}</div>
+        </sc-if>
+
+        <sc-if value="{{ person.hasPurpose }}">
+          <div style="margin-top:34px; padding:18px 18px 19px; background:#1F1E1C; border-radius:12px; border-left:2px solid #00F134;">
+            <div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#00F134; margin-bottom:8px;">Rolün temel amacı</div>
+            <p style="margin:0; font-size:15.5px; line-height:1.6; color:#FFFFFF; text-wrap:pretty;">{{ person.purpose }}</p>
+          </div>
+        </sc-if>
+
+        <div style="margin-top:34px;">
+          <div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#87847E; margin-bottom:14px;">İş tanımı</div>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <sc-for list="{{ person.duties }}" as="d" hint-placeholder-count="3">
+              <p style="margin:0; font-size:15.5px; line-height:1.65; color:#E8E6E1; text-wrap:pretty;">{{ d.text }}</p>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; margin-top:38px;">
+          <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-top:1px solid rgba(255,255,255,.08); font-size:15px;">
+            <span style="color:#87847E; flex:0 0 auto;">Rapor ettiği kişi</span>
+            <a href="{{ person.managerHref }}" style="text-align:right;">{{ person.managerName }}</a>
+          </div>
+          <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-top:1px solid rgba(255,255,255,.08); font-size:15px;">
+            <span style="color:#87847E; flex:0 0 auto;">Fonksiyon</span>
+            <span style="text-align:right; color:#E8E6E1;">{{ person.groupName }}</span>
+          </div>
+          <sc-if value="{{ person.hasLoc }}">
+            <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-top:1px solid rgba(255,255,255,.08); font-size:15px;">
+              <span style="color:#87847E; flex:0 0 auto;">Lokasyon</span>
+              <span style="text-align:right; color:#E8E6E1;">{{ person.loc }}</span>
+            </div>
+          </sc-if>
+          <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); font-size:15px;">
+            <span style="color:#87847E; flex:0 0 auto;">E-posta</span>
+            <a href="{{ person.mailto }}" style="text-align:right; word-break:break-all;">{{ person.email }}</a>
+          </div>
+        </div>
+
+        <sc-if value="{{ person.hasTeam }}">
+          <div style="margin-top:40px;">
+            <div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#87847E; margin-bottom:4px;">Ekibi</div>
+            <div style="display:flex; flex-direction:column;">
+              <sc-for list="{{ person.team }}" as="t" hint-placeholder-count="4">
+                <a href="{{ t.href }}" style="display:flex; align-items:baseline; justify-content:space-between; gap:14px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.08); color:#E8E6E1;" style-hover="color:#00F134;">
+                  <span style="font-size:15px;">{{ t.name }}</span>
+                  <span style="font-size:13px; color:#87847E; text-align:right;">{{ t.role }}</span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <div style="margin-top:44px;">
+          <a href="#" style="font-size:14px;">← Tüm organizasyona dön</a>
+        </div>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const TOP = { id: "burcin-ergunt", name: "Burçin Ergünt" };
+
+const GROUPS = [
+  {
+    label: "Yönetim",
+    people: [{
+      id: "burcin-ergunt",
+      name: "Burçin Ergünt",
+      role: "Spine Media Network Yöneticisi",
+      scope: "",
+      manager: null,
+      purpose: "Grubun sahip olduğu içerik, yayın, yaratıcılık, teknoloji ve ticari kapasiteyi tek bir medya vizyonu altında birleştirerek; güçlü markalar, büyüyen izleyici kitleleri, iyi ürünler ve sürdürülebilir bir medya işi yaratmak.",
+      duties: [
+        "Grubun medya stratejisinin, büyüme hedeflerinin ve iş önceliklerinin belirlenmesinden; bünyesindeki marka, kanal, platform ve ürünlerin ortak bir vizyon doğrultusunda yönetilmesinden sorumludur.",
+        "İçerik, Yayın, Yaratıcı İşler, Reklam Satış, Ürün ve Operasyon ekiplerinin hedeflerini belirler; bu fonksiyonlar arasındaki öncelik, kaynak ve yatırım kararlarını yönetir. Yöneticilerin kendi alanlarında karar alabilecekleri açık bir sorumluluk yapısı oluşturur ve organizasyonun sonuçlarından bütünsel olarak sorumludur.",
+        "Grubun mevcut medya markalarının büyütülmesi, yeni marka, içerik, ürün, platform ve gelir fırsatlarının geliştirilmesi ile hangi alanlara yatırım yapılacağına ilişkin stratejik kararları verir. İzleyici büyümesi, marka değeri, dijital ürün gelişimi ve ticari performansın birbirini desteklemesini sağlar.",
+        "Şirketin yıllık hedeflerini, bütçe ve kaynak önceliklerini belirler; gelir, maliyet, yatırım ve büyüme dengesinin sürdürülebilir şekilde yönetilmesini sağlar. Finansal ve operasyonel performansı yöneticilerle birlikte düzenli olarak takip eder.",
+        "Organizasyon yapısının, çalışma kültürünün ve yönetim standartlarının oluşturulmasından sorumludur. Doğru insanların doğru sorumlulukları üstlenmesini, ekipler arasında açık iletişim ve iş birliği kurulmasını sağlar.",
+        "Grubun hissedarlar, stratejik iş ortakları, hak sahipleri, reklamverenler ve diğer önemli paydaşlar nezdindeki üst düzey temsilini yürütür."
+      ]
+    }]
+  },
+  {
+    label: "İçerik",
+    people: [
+      {
+        id: "cemil-taskale", name: "Cemil Taşkale", role: "Genel Yayın Yönetmeni", scope: "Yarıştayız",
+        purpose: "Yarıştayız’ın ne söylediğini, ne yayınladığını ve izleyici için neden önemli olduğunu belirlemek.",
+        duties: [
+          "Yarıştayız markasının tüm platformlardaki editoryal stratejisinden, içerik kimliğinden ve yayın çizgisinden sorumludur. Televizyon, YouTube, dijital platformlar ve sosyal medya dahil olmak üzere Yarıştayız çatısı altında üretilen içeriklerin hedef kitle, marka stratejisi ve yayın hedefleri doğrultusunda bütünlüklü şekilde yönetilmesini sağlar.",
+          "Program formatlarının geliştirilmesi, editoryal gündemin belirlenmesi, içerik önceliklerinin oluşturulması, yorumcu ve moderatör seçimleri ile editör ekibinin yönetiminden sorumludur. İçerik performansını takip ederek mevcut programların geliştirilmesi, yeni formatların oluşturulması ve yayın stratejisinin sürekli iyileştirilmesini sağlar.",
+          "Yayın Planlama, An Be An, YokArtık!, Ürün Yönetim, Reklam Satış ve Yapım ekipleriyle birlikte çalışarak editoryal fikirlerin uygulanabilir ve ticari değeri olan medya ürünlerine dönüşmesini sağlar."
+        ]
+      },
+      {
+        id: "niko-yenibayrak", name: "Niko Yenibayrak", role: "Genel Yayın Yönetmeni", scope: "Spor Sergi · Maçtayız · Nakavt! · Yarışayız Yapımlar",
+        purpose: "Spor Sergi Grubu’nun farklı spor alanlarında güçlü, özgün ve büyüyebilir medya markaları oluşturmasını sağlamak.",
+        duties: [
+          "Spor Sergi, Maçtayız ve Nakavt! kapsamındaki marka ve yayınların editoryal stratejisinden, içerik kimliğinden ve büyümesinden sorumludur. Grup bünyesindeki bu farklı spor içeriklerinin kendi hedef kitlelerine uygun, özgün ve sürdürülebilir yayın dünyalarına dönüşmesini sağlar.",
+          "İçerik takvimini, program ve format stratejisi, editoryal gündem ve içerik önceliklerini yönetir. Editörlerin, yorumcuların, moderatörlerin ve içerik üreticilerinin editoryal yönlendirmesinden sorumludur.",
+          "Yeni formatların ve içerik markalarının geliştirilmesini sağlar; izlenme, erişim, etkileşim ve platform büyümesi gibi performans göstergelerini takip ederek içerik stratejisini geliştirir.",
+          "Yarıştayız akşam kuşağı yapımlarının belirlenen editoryal çizgi doğrultusunda yapım planlamasını, ekip ve kaynak ihtiyaçlarını ve üretim süreçlerini yönetir; Yayın Planlama, Stüdyo Yayınları ve teknik ekiplerle koordineli çalışarak yapımların zamanında ve belirlenen kalite standardında ekrana çıkmasını sağlar."
+        ]
+      },
+      {
+        id: "eren-sengul", name: "Eren Şengül", role: "Yayın Sorumlusu", scope: "Yarıştayız Yurtdışı",
+        purpose: "Yurtdışı yarışlarını Yarıştayız izleyicisi için anlaşılır, güncel ve güçlü bir içerik ürününe dönüştürmek.",
+        duties: [
+          "Yarıştayız’ın yurtdışı yarışları ve uluslararası at yarışı içeriklerinin uçtan uca içerik üretiminden sorumludur. Uluslararası yarış takviminin takibi, yayınlanacak yarış ve içeriklerin seçimi, editoryal hazırlıkların yapılması ve ilgili yayınların hayata geçirilmesini yönetir.",
+          "Editör ekibinin çalışmalarını koordine eder; yayın öncesi içerik, bilgi, veri ve materyallerin hazırlanmasını sağlar. Yarış yayınları, stüdyo, yayın planlama ve teknik ekiplerle koordineli çalışarak uluslararası içeriklerin zamanında ve doğru şekilde yayına ulaşmasını sağlar.",
+          "Yeni uluslararası yarış organizasyonları, içerik kaynakları ve yayın fırsatlarını takip ederek Yarıştayız’ın global yarış içeriğini geliştirmesine katkıda bulunur.",
+          "Yarıştayız akşam kuşağında yayınlanacak programlara yapım desteği verir."
+        ]
+      },
+      {
+        id: "mehmet-ayan", name: "Mehmet Ayan", role: "Yayın Sorumlusu", scope: "Yarıştayız Sabah Kuşağı",
+        purpose: "Günün yarış gündemini izleyici için güçlü ve düzenli bir günlük medya alışkanlığına dönüştürmek.",
+        duties: [
+          "Sabah kuşağında yayınlanan programın editoryal ve yapım süreçlerinden sorumludur. Günün yarış gündeminin izleyiciye hızlı, güncel ve anlaşılır biçimde aktarılması için programların içerik yapısını ve günlük hazırlık süreçlerini yönetir.",
+          "Editör ekibinin koordinasyonunu sağlar; program konularının, konukların, yorumcuların ve içerik akışının hazırlanmasından sorumludur. Yayın Planlama ve Stüdyo Yayınları ekipleriyle birlikte çalışarak programın günlük yayın operasyonuna eksiksiz şekilde hazırlanmasını sağlar.",
+          "Programın performansını takip ederek içerik yapısının ve formatın sürekli geliştirilmesini sağlar."
+        ]
+      }
+    ]
+  },
+  {
+    label: "Yapım, Yayın ve İletişim",
+    people: [
+      {
+        id: "adem-seker", name: "Adem Şeker", role: "Yayın Planlama ve Koordinasyon Sorumlusu", scope: "",
+        purpose: "İçerik ekiplerinin “ne yayınlayacağız?” kararını, bütün organizasyonun uygulayabileceği “ne zaman, nerede ve hangi kaynaklarla yayınlayacağız?” planına dönüştürmek.",
+        duties: [
+          "Tüm televizyon ve dijital yayınların günlük, haftalık ve dönemsel yayın planlamasının oluşturulmasından; içerik, stüdyo ve yarış yayınları arasındaki koordinasyonun sağlanmasından sorumludur.",
+          "Genel Yayın Yönetmenleri ve yapım sorumluları tarafından oluşturulan editoryal planların yayın akışına ve uygulanabilir operasyon planlarına dönüştürülmesini sağlar.",
+          "Canlı ve bant yayınların takvimlendirilmesi, program süreleri, tekrar yayınları, özel yayınlar ve yayın değişikliklerinin merkezi koordinasyonunu yürütür. Spiker, moderatör ve yorumcuların editoryal ihtiyaçlar doğrultusunda çalışma ve yayın planlamasını gerçekleştirir.",
+          "Yayın arşivinin düzenli, erişilebilir ve sürdürülebilir şekilde yönetilmesini sağlar."
+        ]
+      },
+      {
+        id: "ahmet-gurkan", name: "Ahmet Gürkan", role: "Yarış Yayınları Teknik Sorumlusu", scope: "",
+        purpose: "Yarışın gerçekleştiği hipodrom ile ekran başındaki izleyici arasındaki canlı yayın deneyiminin sahibi olmak.",
+        duties: [
+          "Türkiye’deki yarışların canlı yayın yapımının uçtan uca yönetiminden sorumludur. Hipodromlardan gerçekleştirilen yarış yayınlarının teknik ve görsel standartlarını belirler; yarışın mümkün olan en doğru, kesintisiz ve yüksek kalitede izleyiciye ulaştırılmasını sağlar.",
+          "Yönetmenler, teknik yönetmenler, kameramanlar ve yarış yayını kapsamında görev alan diğer yapım ekiplerini yönetir. Kamera planları, yarış anlatım dili, canlı yayın akışı ve teknik yapım süreçlerinin standartlaştırılmasını sağlar.",
+          "Yayın Planlama, teknik altyapı ve içerik ekipleriyle koordineli çalışarak günlük yarış programlarının kesintisiz şekilde gerçekleştirilmesinden sorumludur.",
+          "Yeni yayın teknolojileri ve yapım yöntemlerini takip ederek yarış yayınlarının sürekli geliştirilmesini sağlar."
+        ]
+      },
+      {
+        id: "ozgur-suzen", name: "Özgür Süzen", role: "Stüdyo Yayın ve Yapımlar Sorumlusu", scope: "",
+        purpose: "Editoryal fikirleri profesyonel, tutarlı ve yüksek kaliteli stüdyo yayınlarına dönüştürmek.",
+        duties: [
+          "Tüm stüdyo programları ve stüdyo kaynaklı canlı/bant yayınların yapımından sorumludur. İçerik ekipleri tarafından geliştirilen programların teknik ve yapım ihtiyaçlarını belirleyerek ekrana doğru kalite ve standartta çıkmasını sağlar.",
+          "Yönetmenler, teknik yönetmenler, vMix operatörleri, kameramanlar ve diğer stüdyo ekiplerinin günlük organizasyonunu ve çalışma standartlarını yönetir.",
+          "Stüdyo kapasitesi, ekip, teknik altyapı ve yapım kaynaklarının verimli kullanılmasını sağlar. YokArtık!, İçerik ve Yayın Planlama ekipleriyle birlikte programların görsel ve teknik kalitesinin sürekli geliştirilmesini yönetir."
+        ]
+      },
+      {
+        id: "cumhur-omay", name: "Cumhur Omay", role: "YokArtık! Studio Yöneticisi", scope: "",
+        purpose: "İçeriği yalnızca üretilmiş değil, fark edilen, hatırlanan ve markaya ait hissedilen bir medya ürününe dönüştürmek.",
+        duties: [
+          "Grup bünyesindeki kreatif üretim kapasitesinin ve kreatif stüdyo ekibinin yönetiminden sorumludur. Marka tasarımı, grafik tasarım, motion design, video, promo, post-prodüksiyon ve sosyal medya kreatifleri dahil olmak üzere farklı platformlar için gerçekleştirilen yaratıcı üretimleri yönetir.",
+          "İçerik ekiplerinden gelen ihtiyaçları değerlendirerek kreatif kaynakların ve üretim önceliklerinin planlanmasını sağlar. Farklı marka ve kanalların kendi kimliklerini korurken şirket genelinde belirlenen yaratıcı kalite standartlarının uygulanmasını sağlar.",
+          "YokArtık! kapsamındaki yaratıcı ve içerik üretim faaliyetlerinin yönetimini yürütür; yeni format ve kreatif fikirlerin geliştirilmesine katkıda bulunur."
+        ]
+      },
+      {
+        id: "murathan-altiyaprak", name: "Murathan Altıyaprak", role: "İletişim Yöneticisi", scope: "",
+        purpose: "",
+        duties: ["İş tanımı hazırlanıyor — en kısa sürede burada paylaşılacak."]
+      }
+    ]
+  },
+  {
+    label: "Operasyon",
+    people: [{
+      id: "sinan-seyhan", name: "Sinan Seyhan", role: "Operasyon Yöneticisi", scope: "",
+      purpose: "İçerik, yayın, reklam satış ve ürün ekiplerinin kendi işlerine odaklanabileceği sağlam ve verimli şirket altyapısını oluşturmak.",
+      duties: [
+        "Tüm medya organizasyonunun ihtiyaç duyduğu şirket altyapısının sağlıklı şekilde çalışmasını sağlar.",
+        "Grup içinden hizmet alınan finans ve muhasebe, hukuk, insan kaynakları ve idari işler fonksiyonları ile koordinasyonu yönetir; bu alanlardaki ihtiyaçların ilgili ekipler tarafından zamanında ve doğru şekilde karşılanmasını sağlar.",
+        "Bütçe süreçleri, satın alma, sözleşmeler, tedarikçiler, personel süreçleri, idari ihtiyaçlar ve şirket içi operasyonların takibini gerçekleştirir. Diğer yöneticilerle birlikte kaynak ihtiyaçlarını ve operasyonel darboğazları belirleyerek çözülmesini sağlar.",
+        "Yönetim için gerekli operasyonel ve finansal görünürlüğün oluşmasını sağlayarak bütçe, kaynak ve süreç disiplinini destekler."
+      ]
+    }]
+  },
+  {
+    label: "Ürün",
+    people: [{
+      id: "urun-yoneticisi", name: "Ürün Yöneticisi", role: "Pozisyon açık", scope: "",
+      purpose: "Şirketin içerik ve yayın gücünü izleyicinin sürekli kullandığı, geri döndüğü ve değer bulduğu dijital ürünlere dönüştürmek.",
+      duties: [
+        "Şirketin dijital ürünlerinin kullanıcı deneyimi, geliştirme öncelikleri ve ürün yol haritasından sorumludur. Web, mobil uygulama ve diğer dijital servislerin kullanıcı ihtiyaçları ve şirket hedefleri doğrultusunda sürekli geliştirilmesini sağlar.",
+        "İçerik, teknoloji ve tasarım ekipleri arasındaki ürün koordinasyonunu yürütür. Kullanıcı davranışlarını, platform performansını ve ürün kullanım verilerini analiz ederek yeni özellik ve geliştirme ihtiyaçlarını belirler.",
+        "Ürün backlog’unu ve roadmap’ini yönetir; geliştirme ekipleriyle birlikte özelliklerin zamanında ve doğru kapsamda hayata geçirilmesini sağlar.",
+        "CRM, kişiselleştirme, bildirimler, kullanıcı kazanımı ve retention gibi alanlarda dijital ürünün büyümesine yönelik çalışmalar yürütür."
+      ]
+    }]
+  },
+  {
+    label: "UI / UX",
+    people: [{
+      id: "mehmet-sahin", name: "Mehmet Şahin", role: "UI / UX Yöneticisi", scope: "",
+      purpose: "Ürün ve teknoloji ekiplerinin geliştirdiği dijital servisleri, kullanıcı için basit, anlaşılır, tutarlı ve güçlü deneyimlere dönüştürmek.",
+      duties: [
+        "Grup bünyesindeki dijital ürünlerin kullanıcı deneyimi ve arayüz tasarımından sorumludur. Web, mobil uygulama ve diğer dijital platformların kullanıcı ihtiyaçlarına uygun, anlaşılır, tutarlı ve kolay kullanılabilir deneyimlere dönüşmesini sağlar.",
+        "UI / UX ekibinin çalışmalarını yönetir; kullanıcı akışları, wireframe, prototip, arayüz tasarımı ve tasarım sistemi süreçlerinin planlanması ve uygulanmasını sağlar.",
+        "Ürün Yönetimi, teknoloji, İçerik ve Yaratıcı İşler ekipleriyle birlikte çalışarak yeni özelliklerin ve dijital servislerin kullanıcı deneyimi açısından doğru şekilde tasarlanmasını sağlar.",
+        "Kullanıcı davranışları, geri bildirimler ve ürün performans verileri doğrultusunda mevcut deneyimlerdeki sorunları ve geliştirme alanlarını belirler; tasarım kararlarının kullanıcı ihtiyacı ve iş hedefleriyle birlikte değerlendirilmesini sağlar.",
+        "Farklı marka ve ürünlerde kullanılan dijital arayüzlerin görsel ve deneyimsel tutarlılığını korur; ortak tasarım standartlarının ve design system yapısının geliştirilmesini yönetir."
+      ]
+    }]
+  },
+  {
+    label: "Satış",
+    people: [{
+      id: "tetis-uygun", name: "Tetiş Uygun", role: "Reklam ve Sponsorluk Satış Yöneticisi", scope: "",
+      purpose: "Şirketin sahip olduğu izleyici, içerik ve medya gücünü sürdürülebilir ticari değere dönüştürmek.",
+      duties: [
+        "Şirketin televizyon, dijital platformlar, sosyal medya, outdoor ve içerik markaları üzerinden reklam ve sponsorluk gelirlerinin geliştirilmesinden sorumludur.",
+        "Reklamverenler, medya ajansları ve ticari iş ortaklarıyla ilişkileri yönetir; mevcut reklam envanterinin satışını gerçekleştirir ve yeni gelir modellerinin geliştirilmesine katkıda bulunur.",
+        "Reklam Pazarlama ve Reklam Operasyon ekiplerinin çalışmalarını yönetir. İçerik ve YokArtık! ekipleriyle birlikte sponsorluk, branded content ve özel projelerin geliştirilmesini; Yayın Planlama ve operasyon ekipleriyle birlikte satılan kampanyaların doğru şekilde uygulanmasını sağlar.",
+        "Satış pipeline’ını, hedefleri, teklif süreçlerini ve gerçekleşen gelirleri takip eder."
+      ]
+    }]
+  }
+];
+
+const MAILS = {
+  "burcin-ergunt": "burcin.ergunt", "cemil-taskale": "cemil.taskale", "niko-yenibayrak": "niko.yenibayrak",
+  "eren-sengul": "eren.sengul", "mehmet-ayan": "mehmet.ayan", "adem-seker": "adem.seker",
+  "ahmet-gurkan": "ahmet.gurkan", "ozgur-suzen": "ozgur.suzen", "cumhur-omay": "cumhur.omay",
+  "murathan-altiyaprak": "murathan.altiyaprak", "sinan-seyhan": "sinan.seyhan",
+  "urun-yoneticisi": "ik", "tetis-uygun": "tetis.uygun"
+};
+
+const TR = { "ç":"c","Ç":"c","ğ":"g","Ğ":"g","ı":"i","İ":"i","ö":"o","Ö":"o","ş":"s","Ş":"s","ü":"u","Ü":"u" };
+function slug(name) {
+  return name.split("").map(c => TR[c] ?? c).join("").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+function mail(p) {
+  if (MAILS[p.id]) return MAILS[p.id] + "@thisisspine.com";
+  const parts = slug(p.name).split("-");
+  return parts[0] + "." + parts[parts.length - 1] + "@thisisspine.com";
+}
+
+const TEAMS = {
+  "mehmet-sahin": [
+    { name: "Uğur Küçüker", role: "UI / UX Ekibi" },
+    { name: "Zekeriya Kömürcü", role: "UI / UX Ekibi" },
+    { name: "Mehmet Arslan", role: "UI / UX Ekibi" }
+  ],
+  "adem-seker": [
+    { name: "Hamza Akgümüş", role: "Yayın Yönetim Şefi", loc: "İstanbul" },
+    { name: "Turan Erkan Barış", role: "Şef Spiker", loc: "İstanbul" }
+  ],
+  "hamza-akgumus": [
+    { name: "Hande Deringürler Marangoz", role: "Yönetmen", loc: "İstanbul" },
+    { name: "Hira Demir Başkan", role: "Yönetmen", loc: "İstanbul" },
+    { name: "Derman Altunbaş", role: "Yönetmen", loc: "İstanbul" },
+    { name: "Hayri Bozan", role: "Yönetmen", loc: "İstanbul" },
+    { name: "Yunus Akdi", role: "Yönetmen", loc: "İstanbul" },
+    { name: "Bilgihan Üzüm", role: "Yönetmen", loc: "İzmir" },
+    { name: "Ahmet Furkan Bolat", role: "Yönetmen", loc: "Adana" },
+    { name: "Fırat Süzer", role: "Yönetmen", loc: "Diyarbakır" },
+    { name: "Ahmet Karanfil", role: "Yönetmen", loc: "Ankara" },
+    { name: "Tarık Erdinç", role: "Kurgu Uzmanı", loc: "İstanbul" },
+    { name: "Sercan Doğaner", role: "Kurgu Görevlisi", loc: "İstanbul" },
+    { name: "Mehpare Gülay Ayyıldız", role: "Kurgu Görevlisi", loc: "İstanbul" },
+    { name: "Onur Sütcü", role: "Kurgu Görevlisi", loc: "İstanbul" },
+    { name: "Faruk Demir", role: "Program Sorumlusu", loc: "İstanbul" },
+    { name: "Ercan Turan", role: "Program Sorumlusu", loc: "İstanbul" }
+  ],
+  "turan-erkan-baris": [
+    { name: "Kaan Kıynak", role: "Eğitmen Spiker", loc: "İstanbul" },
+    { name: "Taner Tomaçoğlu", role: "Uzman Spiker", loc: "İstanbul" },
+    { name: "Sait Topal", role: "Spiker", loc: "İstanbul" },
+    { name: "Emircan Serttaş", role: "Spiker", loc: "İstanbul" },
+    { name: "Onur Aygün", role: "Spiker", loc: "İstanbul" },
+    { name: "Hasancan Yırtmaz", role: "Spiker", loc: "İstanbul" },
+    { name: "Ekrem Hazırlar", role: "Spiker", loc: "İstanbul" },
+    { name: "Hüseyin Derya Keçici", role: "Spiker", loc: "İzmir" },
+    { name: "Yiğitcan Türkmen", role: "Spiker", loc: "İzmir" },
+    { name: "Cihat Altun", role: "Spiker", loc: "Diyarbakır" },
+    { name: "Soner Barış Delidolu", role: "Spiker", loc: "Diyarbakır" },
+    { name: "Umut Yurdakul", role: "Spiker", loc: "Ankara" },
+    { name: "Togay Altan", role: "Spiker", loc: "Ankara" },
+    { name: "Adnan Tunç", role: "Spiker", loc: "Adana" },
+    { name: "Yusuf Akçam", role: "Spiker", loc: "Adana" }
+  ],
+  "ahmet-gurkan": [
+    { name: "Feyzullah Baştuğ", role: "Teknik Yönetmen Şefi", loc: "İstanbul" },
+    { name: "Serkan Gereç", role: "Kameraman Şefi", loc: "İstanbul" }
+  ],
+  "feyzullah-bastug": [
+    { name: "Fatih Doğan", role: "Teknik Yönetmen", loc: "İstanbul" },
+    { name: "Bulut Sözeri", role: "Teknik Yönetmen", loc: "İzmir" },
+    { name: "Cemil Şenses", role: "Teknik Yönetmen", loc: "Bursa" },
+    { name: "Doğudan Ulaş Güngör", role: "Teknik Yönetmen", loc: "Ankara" },
+    { name: "Mehmet Karakoyun", role: "Teknik Yönetmen", loc: "Diyarbakır" },
+    { name: "Uğur Kara", role: "Yayın Donanım Teknisyeni", loc: "İstanbul" },
+    { name: "Erdinç Ekmekçi", role: "Yayın Donanım Teknisyeni", loc: "İstanbul" },
+    { name: "Attila Bozdemir", role: "Yayın Donanım Teknisyeni", loc: "İzmir" },
+    { name: "Erdal Bulut", role: "Yayın Donanım Teknisyeni", loc: "Adana" },
+    { name: "İbrahim Poyraz", role: "Yayın Donanım Teknisyeni", loc: "Ankara" },
+    { name: "İslam Gültekin", role: "Yayın Donanım Teknisyeni", loc: "Diyarbakır" },
+    { name: "Halil Ergin", role: "KJ Uzmanı", loc: "İstanbul" },
+    { name: "Dursun Çalkur", role: "KJ Operatörü", loc: "İstanbul" },
+    { name: "Hatice Deringürler", role: "KJ Operatörü", loc: "İstanbul" },
+    { name: "Volkan Kakaç", role: "KJ Operatörü", loc: "İstanbul" },
+    { name: "Volkan Serbest", role: "KJ Operatörü", loc: "İstanbul" },
+    { name: "Umut Şenman", role: "KJ Operatörü", loc: "İstanbul" },
+    { name: "Erhan Korcan Kurtuluş", role: "KJ Operatörü", loc: "İzmir" },
+    { name: "Cihan Deniz Üstün", role: "KJ Operatörü", loc: "Adana" },
+    { name: "Hüseyin Gökoğlu", role: "KJ Operatörü", loc: "Ankara" },
+    { name: "Elanur Bekil", role: "KJ Operatörü", loc: "Diyarbakır" },
+    { name: "Ebru Karaca Salgın", role: "VTR Operatörü", loc: "İstanbul" },
+    { name: "Çağrı Akşehirlioğlu", role: "VTR Operatörü", loc: "İstanbul" },
+    { name: "Irmak Başarkan", role: "VTR Operatörü", loc: "İstanbul" },
+    { name: "İsa Gül", role: "VTR Operatörü", loc: "İstanbul" },
+    { name: "Ramazan Polat", role: "VTR Operatörü", loc: "İstanbul" },
+    { name: "Cemal Emre Doğan", role: "VTR Operatörü", loc: "İzmir" },
+    { name: "Bekir Kekeç", role: "VTR Operatörü", loc: "Adana" },
+    { name: "Turan Demir", role: "VTR Operatörü", loc: "Ankara" },
+    { name: "Merve Duymaz Fidancı", role: "VTR Operatörü", loc: "Diyarbakır" },
+    { name: "Yusuf Anavatan", role: "VTR Operatörü", loc: "Bursa" },
+    { name: "Nihat Cihan Arığ", role: "Ses Uzmanı", loc: "İstanbul" },
+    { name: "Okan Doğan", role: "Ses Operatörü", loc: "İstanbul" },
+    { name: "Nadir Çiçek", role: "Ses Operatörü", loc: "İstanbul" },
+    { name: "Abdusselam Cihad Orak", role: "Ses Operatörü", loc: "İzmir" },
+    { name: "Mehmet Özdemir", role: "Ses Operatörü", loc: "Adana" },
+    { name: "Muhammet Talha Tüfekçi", role: "Ses Operatörü", loc: "Ankara" },
+    { name: "Yaşar Akın Bakırhan", role: "Ses Operatörü", loc: "İstanbul" },
+    { name: "Arda Diker", role: "Ses Operatörü", loc: "Adana" },
+    { name: "İbrahim Yüzük", role: "Ses Operatörü", loc: "Diyarbakır" }
+  ],
+  "serkan-gerec": [
+    { name: "Cengiz Danacı", role: "Kameraman", loc: "İstanbul" },
+    { name: "Selim Aslan", role: "Kameraman", loc: "İstanbul" },
+    { name: "Cumali Akoğul", role: "Kameraman", loc: "İstanbul" },
+    { name: "Ahmet Can Güçkaya", role: "Kameraman", loc: "İstanbul" },
+    { name: "Necati Akoğul", role: "Kameraman", loc: "İstanbul" },
+    { name: "Engin Akdi", role: "Kameraman", loc: "İstanbul" },
+    { name: "Soner Aksu", role: "Kameraman", loc: "İstanbul" },
+    { name: "Sayen Kaspar", role: "Kameraman", loc: "İstanbul" },
+    { name: "Yasin Tonbul", role: "Kameraman", loc: "İstanbul" },
+    { name: "Burak Yıldırım", role: "Kameraman", loc: "İstanbul" },
+    { name: "Engin Koray Gülver", role: "Kameraman", loc: "İzmir" },
+    { name: "Burçin Aras", role: "Kameraman", loc: "İzmir" },
+    { name: "Alper Nedim Tız", role: "Kameraman", loc: "İzmir" },
+    { name: "Serkan Çelik", role: "Kameraman", loc: "İzmir" },
+    { name: "Görkem Biberci", role: "Kameraman", loc: "İzmir" },
+    { name: "Mücahit Baran", role: "Kameraman", loc: "İzmir" },
+    { name: "Abdulvahap Hoşerler", role: "Kameraman", loc: "Adana" },
+    { name: "Kadir Ilgın", role: "Kameraman", loc: "Adana" },
+    { name: "Alkın Küreç", role: "Kameraman", loc: "Adana" },
+    { name: "İsmail Yanal", role: "Kameraman", loc: "Diyarbakır" },
+    { name: "Serdar Sunar", role: "Kameraman", loc: "Diyarbakır" },
+    { name: "Ferhat Efe", role: "Kameraman", loc: "Diyarbakır" },
+    { name: "Yıldıray Akgül", role: "Kameraman", loc: "Diyarbakır" },
+    { name: "Saffet Akın", role: "Kameraman", loc: "Diyarbakır" },
+    { name: "Bahattin Bilen", role: "Kameraman", loc: "Diyarbakır" },
+    { name: "Emre Selçuk", role: "Kameraman", loc: "Ankara" },
+    { name: "Muharrem Akın Davarcı", role: "Kameraman", loc: "Ankara" },
+    { name: "İbrahim Günaydın", role: "Kameraman", loc: "Adana" },
+    { name: "Yengi Çataloğlu", role: "Kameraman", loc: "Adana" },
+    { name: "Mahsuncan Azboy", role: "Kameraman", loc: "Adana" }
+  ],
+  "ozgur-suzen": [
+    { name: "Musa Sağlam", role: "Teknik Yönetmen" },
+    { name: "Kürşad Ünlüer", role: "Yardımcı Teknik Yönetmen" },
+    { name: "Mehmet Baki Özcan", role: "Yönetmen" },
+    { name: "Eray Sezgin", role: "vMix Operatörü" },
+    { name: "Süheyl Metik", role: "vMix Operatörü" },
+    { name: "Ahmet Can Kahraman", role: "vMix Operatörü" },
+    { name: "Serkan Durmaz", role: "vMix Operatörü" },
+    { name: "Eray Aktaş", role: "vMix Operatörü" },
+    { name: "Hasan Yazıcı", role: "Stüdyo Teknisyeni" }
+  ]
+};
+
+const ROLE_DEFS = {
+  "UI / UX Ekibi": {
+    purpose: "",
+    duties: ["İş tanımı hazırlanıyor — en kısa sürede burada paylaşılacak."]
+  },
+  "Teknik Yönetmen Şefi": {
+    purpose: "Yarış yayınlarının teknik operasyonunun bütün lokasyonlarda aynı standartta, kesintisiz ve güvenilir şekilde yürütülmesini sağlamak.",
+    duties: [
+      "Yarış yayınlarının teknik yönetmenlik operasyonunun planlanması, koordinasyonu ve teknik yayın standartlarının uygulanmasından sorumludur.",
+      "Teknik Yönetmen, Yayın Donanım Teknisyeni, KJ, VTR ve Ses ekiplerinin lokasyon bazında günlük ve haftalık çalışma planlarını oluşturur; yarış takvimi doğrultusunda görevlendirmeleri koordine eder.",
+      "Yayın altyapısının, teknik sistemlerin ve ekipmanların çalışır durumda tutulmasını; arıza, bakım ve yenileme ihtiyaçlarının takip edilmesini sağlar.",
+      "Yayın Planlama ve yapım ekipleriyle koordineli çalışarak yayın akışındaki teknik ihtiyaçların eksiksiz karşılanmasını sağlar; teknik çalışma yöntemlerinin standartlaştırılmasından sorumludur."
+    ]
+  },
+  "Kameraman Şefi": {
+    purpose: "Kamera ekibinin bütün hipodrom ve stüdyolarda doğru planlanmasını ve yayınların görüntü kalitesinin tutarlı olmasını sağlamak.",
+    duties: [
+      "Yarış ve stüdyo yayınlarında görev alan kamera ekibinin planlanması, koordinasyonu ve yönetiminden sorumludur.",
+      "Lokasyon bazında kameraman görevlendirmelerini yapar; yarış takvimi ve yayın ihtiyaçları doğrultusunda ekip planlamasını oluşturur.",
+      "Kamera planları, çekim standartları ve görüntü kalitesinin yayınlar arasında tutarlı olmasını takip eder; yönetmen ve teknik yönetmen ekipleriyle koordineli çalışır.",
+      "Kamera ekipmanlarının kullanımı, bakımı ve ihtiyaçlarının takibinden; ekibin gelişimi ve çalışma standartlarının oluşturulmasından sorumludur."
+    ]
+  },
+  "Kameraman": {
+    purpose: "Yarışın ve programın en doğru görüntüsünü, doğru anda yayına vermek.",
+    duties: [
+      "Yarış ve stüdyo yayınlarında kendisine planlanan kamerayı kullanarak yayının görüntü çekimini gerçekleştirir.",
+      "Yayın öncesinde kamera ve bağlantı kurulumunu yapar, ekipmanın çalışır ve yayına hazır olduğunu kontrol eder.",
+      "Yayın sırasında yönetmenin yönlendirmeleri doğrultusunda kadraj, hareket ve takip çekimlerini gerçekleştirir.",
+      "Ekipmanın düzenli, güvenli ve çalışır durumda tutulmasından sorumludur; arıza ve ihtiyaçları ilgili ekiplere bildirir."
+    ]
+  },
+  "Yayın Donanım Teknisyeni": {
+    purpose: "Yayın için gereken teknik donanımın her lokasyonda her an çalışır ve hazır olmasını sağlamak.",
+    duties: [
+      "Yayın donanımının kurulumu, bakımı ve yayına hazır durumda tutulmasından sorumludur.",
+      "Yayın öncesinde kamera, ses, görüntü, kayıt ve aktarım sistemlerinin bağlantılarını ve sinyal akışlarını kontrol eder.",
+      "Yayın sırasında oluşan teknik arızalara ilk müdahaleyi gerçekleştirir; Teknik Yönetmen ile koordineli çalışır.",
+      "Ekipman envanterinin takibi, arıza kayıtları ve bakım/yenileme ihtiyaçlarının bildirilmesinden sorumludur."
+    ]
+  },
+  "KJ Uzmanı": {
+    purpose: "Ekrandaki bilgi katmanının doğru, hızlı ve yayın standartlarına uygun olmasını sağlamak.",
+    duties: [
+      "Yayınlarda kullanılan grafik ve bilgi bandı (KJ) içeriklerinin hazırlanması ve yayın standartlarının belirlenmesinden sorumludur.",
+      "Yarış ve program bilgilerinin doğru, güncel ve zamanında ekrana yansıtılmasını sağlar; şablon ve grafik yapılarını hazırlar.",
+      "KJ Operatörlerini yönlendirir; üretilen grafiklerin doğruluk ve kalite kontrolünü gerçekleştirir.",
+      "İçerik, yönetmen ve teknik ekiplerle koordineli çalışarak grafik altyapısının geliştirilmesine katkıda bulunur."
+    ]
+  },
+  "KJ Operatörü": {
+    purpose: "Yayın sırasında ekrana gelen bilgilerin hatasız ve doğru zamanda görünmesini sağlamak.",
+    duties: [
+      "Yayın sırasında grafik ve bilgi bandı içeriklerinin ekrana verilmesinden sorumludur.",
+      "Yayın öncesinde gerekli grafik, şablon ve bilgi girişlerini hazırlar; içeriklerin doğruluğunu kontrol eder.",
+      "Yönetmenin yönlendirmeleri doğrultusunda grafiklerin doğru zamanda ekrana gelmesini sağlar.",
+      "Yayın sırasında oluşan hataları hızlıca düzeltir; KJ Uzmanı ve teknik ekiplerle koordineli çalışır."
+    ]
+  },
+  "Ses Uzmanı": {
+    purpose: "Yayının ses kalitesinin bütün lokasyonlarda profesyonel ve tutarlı olmasını sağlamak.",
+    duties: [
+      "Yayınların ses kurulumu, ses kalitesi ve ses standartlarının belirlenmesinden sorumludur.",
+      "Mikrofon, mikser, kayıt ve aktarım sistemlerinin kurulumunu ve yayına hazırlığını yönetir.",
+      "Ses Operatörlerini yönlendirir; yayın sırasında ses miksinin ve seviyelerinin doğru olmasını takip eder.",
+      "Ses ekipmanlarının bakım ve yenileme ihtiyaçlarını takip eder; ses altyapısının geliştirilmesine katkıda bulunur."
+    ]
+  },
+  "Ses Operatörü": {
+    purpose: "Yayın boyunca sesin net, dengeli ve kesintisiz olmasını sağlamak.",
+    duties: [
+      "Yayınların ses operasyonunun yürütülmesinden sorumludur.",
+      "Yayın öncesinde mikrofon, kulaklık, mikser ve ses bağlantılarının kurulumunu ve kontrolünü yapar.",
+      "Yayın sırasında ses seviyelerini ve miksini yönetir; anlatım, stüdyo ve saha seslerinin dengeli şekilde yayına gitmesini sağlar.",
+      "Ses kaynaklı sorunlara hızlı müdahale eder; Ses Uzmanı ve teknik ekiplerle koordineli çalışır."
+    ]
+  },
+  "Yayın Yönetim Şefi": {
+    purpose: "Tüm yayınlarda yönetmenlik operasyonunun düzenli, tutarlı ve yüksek yayın standardında gerçekleştirilmesini sağlamak.",
+    duties: [
+      "Televizyon ve dijital platformlarda gerçekleştirilen canlı ve bant yayınların yönetmenlik operasyonunun planlanması, koordinasyonu ve yayın standartlarının uygulanmasından sorumludur.",
+      "Yönetmenlerin günlük ve haftalık çalışma planlarını oluşturur; yarış, program ve özel yayınların ihtiyaçlarına göre yönetmen görevlendirmelerini koordine eder.",
+      "Yayın Planlama ile birlikte çalışarak yayın akışında yer alan programların yönetmenlik ihtiyaçlarının eksiksiz karşılanmasını sağlar. Yönetmenler ile teknik ekipler arasındaki operasyonel koordinasyonu yürütür.",
+      "Yönetmenlik standartlarının geliştirilmesi, programların görsel dilinde sürekliliğin sağlanması ve ekip içindeki çalışma yöntemlerinin standartlaştırılmasından sorumludur."
+    ]
+  },
+  "Kurgu Uzmanı": {
+    purpose: "Ham görüntü ve materyalleri yayınlanabilir, anlatımı güçlü ve teknik standartlara uygun içeriklere dönüştürmek.",
+    duties: [
+      "Televizyon, dijital platformlar ve sosyal medya için üretilen video içeriklerinin kurgu ve post-prodüksiyon süreçlerinden sorumludur.",
+      "Program, röportaj, tanıtım, yarış içeriği ve diğer yapımların yayın amacına uygun şekilde kurgulanmasını; görüntü, ses, grafik ve diğer materyallerin bütünlüklü bir içeriğe dönüştürülmesini sağlar.",
+      "İçerik ve Yaratıcı İşler ekiplerinden gelen briefler doğrultusunda kurgu yaklaşımını belirler; gerekli durumlarda Kurgu Görevlilerini yönlendirir ve üretilen işlerin teknik ve görsel kalite kontrolünü gerçekleştirir.",
+      "Kullanılan proje ve medya dosyalarının düzenli şekilde saklanması ve gerektiğinde yeniden kullanılabilir durumda tutulmasına katkıda bulunur."
+    ]
+  },
+  "Kurgu Görevlisi": {
+    purpose: "Üretilen görüntüleri hızlı, doğru ve yayın standartlarına uygun içeriklere dönüştürmek.",
+    duties: [
+      "Televizyon ve dijital platformlar için hazırlanan içeriklerin kurgu ve temel post-prodüksiyon işlemlerini gerçekleştirir.",
+      "Program kayıtları, röportajlar, yarış görüntüleri, kısa videolar ve diğer içerikleri kendisine verilen brief ve yayın ihtiyacı doğrultusunda hazırlar.",
+      "Görüntü seçimi, temel ses düzenleme, grafik yerleştirme, süre düzenleme ve yayın formatına uygun çıktıların hazırlanmasını gerçekleştirir.",
+      "Kurgu Uzmanı, içerik ekipleri ve ilgili yapım sorumlularıyla koordineli çalışarak içeriklerin zamanında yayına hazır hale getirilmesini sağlar."
+    ]
+  },
+  "Program Sorumlusu": {
+    purpose: "Bir programın fikir aşamasından yayına kadar ihtiyaç duyduğu bütün unsurların doğru zamanda bir araya gelmesini sağlamak.",
+    duties: [
+      "Sorumlu olduğu programların yayın öncesi hazırlık, yapım ve günlük koordinasyon süreçlerinin yürütülmesinden sorumludur.",
+      "Programın konu, konuk, yorumcu, görsel, video, grafik ve diğer içerik ihtiyaçlarının zamanında hazırlanmasını takip eder.",
+      "İçerik ekibi, Yayın Planlama, yönetmen, teknik ekip ve diğer ilgili birimler arasında program bazındaki koordinasyonu sağlar.",
+      "Program akışının hazırlanması, gerekli materyallerin ilgili ekiplere ulaştırılması ve programın yayına eksiksiz şekilde hazırlanmasını takip eder.",
+      "Canlı veya bant yayın sonrasında ortaya çıkan ihtiyaç ve aksaklıkların değerlendirilerek sonraki yayınlara yönelik gerekli iyileştirmelerin yapılmasına katkıda bulunur."
+    ]
+  },
+  "Şef Spiker": {
+    purpose: "Yarış anlatımının bütün platformlarda güçlü, doğru, tutarlı ve profesyonel bir standartta gerçekleştirilmesini sağlamak.",
+    duties: [
+      "Yarış spikerliği operasyonunun ve spiker ekibinin genel koordinasyonundan sorumludur.",
+      "Spikerlerin çalışma ve yayın planlarının oluşturulmasına katkıda bulunur; yarış takvimi ve yayın ihtiyaçları doğrultusunda spiker görevlendirmelerinin yapılmasını sağlar.",
+      "Yarış anlatım standartlarının, terminolojinin ve yayın dilinin tutarlı şekilde uygulanmasını takip eder.",
+      "Spikerlerin performanslarını değerlendirir; gelişim alanlarını belirler ve gerekli durumlarda eğitim, geri bildirim ve yönlendirme süreçlerini yürütür.",
+      "Yayın Planlama ve ilgili içerik ekipleriyle koordineli çalışarak spiker ihtiyacının kesintisiz karşılanmasını sağlar."
+    ]
+  },
+  "Eğitmen Spiker": {
+    purpose: "Spiker ekibinin bilgi, anlatım ve yayın kalitesini sürekli geliştirerek ortak bir yarış anlatım standardı oluşturmak.",
+    duties: [
+      "Mevcut ve yeni spikerlerin mesleki gelişimi, yayın dili ve yarış anlatım standartları konusunda eğitim ve gelişim süreçlerinden sorumludur.",
+      "Spikerlerin yarış bilgisi, anlatım tekniği, terminoloji kullanımı, ses kullanımı, tempo ve canlı yayın reflekslerinin geliştirilmesine yönelik çalışmalar yürütür.",
+      "Yayınları takip ederek spiker performanslarını değerlendirir ve gelişime yönelik geri bildirim verir.",
+      "Yeni spiker adaylarının değerlendirilmesi, hazırlanması ve yayın standartlarına uyum süreçlerinde Şef Spiker ile birlikte çalışır."
+    ]
+  },
+  "Uzman Spiker": {
+    purpose: "Yarış anlatımında yüksek bilgi, deneyim ve yayın kalitesini temsil etmek.",
+    duties: [
+      "Yarış yayınlarında yüksek bilgi ve deneyim gerektiren anlatım görevlerini gerçekleştirir; yarışların doğru, anlaşılır ve profesyonel şekilde izleyiciye aktarılmasından sorumludur.",
+      "Yarış öncesinde gerekli hazırlıkları yapar; atlar, jokeyler, yarış programı ve ilgili bilgiler konusunda yayına hazır olur.",
+      "Canlı yayın sırasında yarışın gelişimini doğru terminoloji, uygun tempo ve güçlü bir anlatımla aktarır.",
+      "Deneyimi doğrultusunda diğer spikerlerin gelişimine katkıda bulunur; gerekli durumlarda Şef Spiker ve Eğitmen Spiker ile birlikte yayın standartlarının geliştirilmesine destek verir."
+    ]
+  },
+  "Spiker": {
+    purpose: "Yarışın heyecanını ve gelişimini izleyiciye doğru, anlaşılır ve güçlü bir canlı anlatımla aktarmak.",
+    duties: [
+      "Kendisine planlanan yarışların canlı anlatımından sorumludur.",
+      "Yayın öncesinde yarış programı, atlar, jokeyler ve gerekli diğer bilgileri inceleyerek yayına hazırlanır.",
+      "Yarış sırasında gelişmeleri doğru, anlaşılır, tarafsız ve izleyicinin yarışı takip etmesini kolaylaştıracak bir anlatımla aktarır.",
+      "Belirlenen yarış anlatım terminolojisine, yayın diline ve spikerlik standartlarına uygun şekilde görev yapar.",
+      "Şef Spiker ve Eğitmen Spiker tarafından verilen geri bildirimleri takip ederek anlatım ve yayın performansını sürekli geliştirir."
+    ]
+  },
+  "Yapımlar Yöneticisi": {
+    purpose: "Editoryal olarak planlanan programları, doğru ekip ve kaynakları bir araya getirerek uygulanabilir ve sürdürülebilir yapımlara dönüştürmek.",
+    duties: [
+      "Stüdyo bünyesinde gerçekleştirilen canlı ve bant yapımların planlanması, hazırlığı ve uygulama süreçlerinin koordinasyonundan sorumludur. Programların içerik ekiplerinden gelen ihtiyaçlarını stüdyo, teknik ekip ve insan kaynağı açısından uygulanabilir yapım planlarına dönüştürür.",
+      "Yapımların stüdyo, ekip, teknik altyapı ve zaman ihtiyaçlarını belirler; Yönetmen, vMix Operatörü, Stüdyo Teknisyeni ve diğer ilgili ekiplerin yapım bazında koordinasyonunu sağlar.",
+      "İçerik, Yayın Planlama, Yaratıcı İşler ve Stüdyo Yayınları ekipleriyle birlikte çalışarak programların zamanında, belirlenen kalite standardında ve mevcut kaynakların verimli kullanılmasıyla gerçekleştirilmesini sağlar.",
+      "Yeni program ve özel yayınların yapım ihtiyaçlarını önceden değerlendirir; prova, hazırlık, çekim ve yayın süreçlerinin eksiksiz ilerlemesini takip eder."
+    ]
+  },
+  "Yönetmen": {
+    purpose: "Hazırlanan içeriği, yayın sırasında bütün görsel ve teknik unsurları yöneterek güçlü ve akıcı bir ekran deneyimine dönüştürmek.",
+    duties: [
+      "Canlı ve bant stüdyo yayınlarının görsel anlatımından ve yayın sırasında programın ekrana nasıl yansıyacağından sorumludur. Programın içeriğine ve formatına uygun kamera kullanımı, görüntü seçimi, grafik, video ve diğer yayın unsurlarının doğru zamanda ekrana gelmesini yönetir.",
+      "Yayın sırasında kameraman, vMix Operatörü, teknik ekip, ses, KJ/VTR ve diğer ilgili ekipleri yönlendirerek program akışının kesintisiz ve belirlenen yayın standardında gerçekleştirilmesini sağlar.",
+      "Yayın öncesinde programın içeriğini ve akışını inceler; gerekli kamera planı, görsel kullanım, VT, grafik ve teknik ihtiyaçların hazırlanması için ilgili ekiplerle koordinasyon sağlar.",
+      "Programların görsel dilinin ve yayın kalitesinin geliştirilmesine katkıda bulunur; tekrar eden formatlarda tutarlı bir yönetmenlik standardının oluşmasını sağlar."
+    ]
+  },
+  "vMix Operatörü": {
+    purpose: "vMix tabanlı yayınların teknik olarak hatasız, akıcı ve yönetmenin ihtiyaçlarına uygun şekilde gerçekleştirilmesini sağlamak.",
+    duties: [
+      "vMix altyapısı üzerinden gerçekleştirilen canlı ve bant yayınların teknik olarak yürütülmesinden sorumludur. Kamera, video, grafik, uzak bağlantı ve diğer görüntü kaynaklarının sisteme alınması, hazırlanması ve yayın sırasında doğru şekilde kullanılmasını sağlar.",
+      "Yönetmenin yönlendirmeleri doğrultusunda görüntü kaynakları arasında geçişleri gerçekleştirir; programın ihtiyaçlarına göre grafik, video, ekran düzeni, uzak bağlantı ve diğer dijital yayın unsurlarını yönetir.",
+      "Yayın öncesinde gerekli proje, şablon, kaynak ve bağlantıları hazırlar; sistemin ve kullanılacak tüm giriş/çıkışların yayına hazır olduğunu kontrol eder.",
+      "Yayın sırasında oluşabilecek teknik sorunlara hızlı müdahale eder ve gerekli durumlarda Stüdyo Teknisyeni ve Teknik Yönetmen ekibiyle koordineli çalışır."
+    ]
+  },
+  "Stüdyo Teknisyeni": {
+    purpose: "Stüdyonun her an çekime ve yayına hazır, güvenli ve teknik olarak sorunsuz çalışmasını sağlamak.",
+    duties: [
+      "Stüdyo içerisinde kullanılan kamera, ışık, ses, monitör, bağlantı, görüntü ve diğer teknik ekipmanların yayına hazır durumda bulunmasından sorumludur.",
+      "Canlı yayın, çekim ve prova öncesinde stüdyonun teknik kurulumunu gerçekleştirir; kullanılacak ekipmanların bağlantılarını, sinyal akışlarını ve temel çalışma kontrollerini yapar.",
+      "Yayın ve çekim sırasında ortaya çıkan teknik sorunlara ilk müdahaleyi gerçekleştirir; gerektiğinde Teknik Yönetmen, vMix Operatörü ve diğer teknik ekiplerle koordineli olarak sorunun giderilmesini sağlar.",
+      "Stüdyo ekipmanlarının düzenli, güvenli ve çalışır durumda tutulmasını; arıza, bakım ve yenileme ihtiyaçlarının zamanında bildirilmesini sağlar."
+    ]
+  },
+  "Teknik Yönetmen": {
+    purpose: "Yönetmenin yayın kararlarının teknik altyapı üzerinde doğru, güvenli ve kesintisiz şekilde uygulanmasını sağlamak.",
+    duties: [
+      "Canlı ve bant yayınların teknik olarak doğru, kesintisiz ve belirlenen yayın standartlarında gerçekleştirilmesinden sorumludur.",
+      "Yayın öncesinde görüntü, ses, grafik, VTR, kamera ve diğer teknik kaynakların kontrolünü yapar; tüm sistemlerin yayına hazır durumda olmasını sağlar.",
+      "Yayın sırasında yönetmenin ihtiyaçları doğrultusunda teknik altyapının çalışmasını takip eder; görüntü ve ses sinyallerinin doğru kaynaklardan alınmasını ve ilgili sistemlere sorunsuz şekilde aktarılmasını sağlar.",
+      "Kameramanlar, ses, KJ, VTR, yayın donanım teknisyenleri ve diğer teknik ekiplerle koordineli çalışarak canlı yayın sırasında ortaya çıkan teknik sorunlara hızlı şekilde müdahale eder.",
+      "Teknik ekipmanların doğru kullanımını ve yayın standartlarının uygulanmasını takip eder; ihtiyaç halinde bakım, arıza ve teknik geliştirme konularını ilgili ekiplerle koordine eder."
+    ]
+  },
+  "Yardımcı Teknik Yönetmen": {
+    purpose: "Teknik Yönetmenin yayın üzerindeki teknik kontrolünü destekleyerek stüdyo operasyonunun güvenli, kesintisiz ve doğru standartlarda yürütülmesine katkı sağlamak.",
+    duties: [
+      "Stüdyo yayınlarının teknik hazırlık ve uygulama süreçlerinde Teknik Yönetmeni destekler; yayın için gerekli görüntü, ses, bağlantı ve teknik sistemlerin doğru şekilde hazırlanmasına yardımcı olur.",
+      "Yayın öncesinde teknik sistemlerin, sinyal yollarının, görüntü ve ses kaynaklarının kontrol edilmesine; gerekli cihaz ve bağlantıların hazırlanmasına destek verir.",
+      "Canlı yayın sırasında Teknik Yönetmenin yönlendirmeleri doğrultusunda teknik sistemlerin takibini yapar, ortaya çıkan sorunların tespit ve çözüm süreçlerine katkıda bulunur.",
+      "Stüdyo Teknisyenleri, vMix Operatörleri ve diğer teknik ekiplerle koordineli çalışarak yayın operasyonunun kesintisiz ilerlemesini destekler.",
+      "Teknik Yönetmenin bulunmadığı veya görev devri yapılan durumlarda, yetki ve sorumluluk sınırları dahilinde gerekli teknik operasyonları üstlenir."
+    ]
+  }
+};
+
+class Component extends DCLogic {
+  state = { hash: typeof location !== "undefined" ? location.hash : "" };
+
+  componentDidMount() {
+    this._onHash = () => { this.setState({ hash: location.hash }); window.scrollTo(0, 0); };
+    window.addEventListener("hashchange", this._onHash);
+  }
+  componentWillUnmount() { window.removeEventListener("hashchange", this._onHash); }
+
+  renderVals() {
+    const m = /^#\/kisi\/(.+)$/.exec(this.state.hash || "");
+    const target = m?.[1];
+    let found = null;
+
+    const walk = (mgr, groupLabel) => {
+      (TEAMS[mgr.id] || []).forEach(t => {
+        const id = slug(t.name);
+        const def = ROLE_DEFS[t.role] || { purpose: "", duties: ["İş tanımı hazırlanıyor."] };
+        const node = {
+          id, name: t.name, role: t.role, scope: "", loc: t.loc || "",
+          purpose: def.purpose, duties: def.duties,
+          groupLabel, managerName: mgr.name, managerId: mgr.id
+        };
+        if (id === target) found = node;
+        walk(node, groupLabel);
+      });
+    };
+
+    GROUPS.forEach(g => g.people.forEach(p => {
+      if (p.id === target) found = { ...p, groupLabel: g.label };
+      walk(p, g.label);
+    }));
+
+    return {
+      isHome: !found,
+      isPerson: !!found,
+      groups: GROUPS.map(g => ({
+        label: g.label,
+        people: g.people.map(p => ({
+          name: p.name,
+          roleLine: p.scope ? p.role + " · " + p.scope : p.role,
+          href: "#/kisi/" + p.id
+        }))
+      })),
+      person: found ? {
+        name: found.name,
+        role: found.role,
+        scope: found.scope,
+        hasScope: !!found.scope,
+        groupLabel: found.groupLabel,
+        groupName: found.groupLabel,
+        purpose: found.purpose,
+        hasPurpose: !!found.purpose,
+        duties: found.duties.map((text, i) => ({ text, key: i })),
+        managerName: found.id === TOP.id ? "Kubilay Ilgın" : (found.managerName || TOP.name),
+        managerHref: found.id === TOP.id ? "#" : "#/kisi/" + (found.managerId || TOP.id),
+        email: mail(found),
+        mailto: "mailto:" + mail(found),
+        loc: found.loc || "",
+        hasLoc: !!found.loc,
+        teamCount: (TEAMS[found.id] || []).length,
+        team: (TEAMS[found.id] || []).map(t => ({
+          name: t.name,
+          role: t.loc ? t.role + " · " + t.loc : t.role,
+          href: "#/kisi/" + slug(t.name)
+        })),
+        hasTeam: (TEAMS[found.id] || []).length > 0
+      } : null
+    };
+  }
+}
+
+</script>
+</body>
+</html>

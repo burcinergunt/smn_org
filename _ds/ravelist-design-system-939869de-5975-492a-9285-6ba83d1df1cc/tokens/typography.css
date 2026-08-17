@@ -1,0 +1,38 @@
+/* ============================================================
+   RAVELIST · TYPOGRAPHY TOKENS
+   Inter, weights 400 & 500 ONLY. Minimum size 11px.
+   ============================================================ */
+
+:root {
+  --rl-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --rl-weight-regular: 400;
+  --rl-weight-medium:  500;
+
+  /* Type scale — punchy: large sizes carry weight, not extra boldness */
+  --rl-display-size: 30px;   /* hero experience titles (immersive overlay) */
+  --rl-display-lh:   1.06;   /* @kind font */
+  --rl-display-ls:   -0.025em;
+
+  --rl-title-size:   25px;   /* card titles */
+  --rl-title-lh:     1.10;   /* @kind font */
+  --rl-title-ls:     -0.02em;
+
+  --rl-headline-size: 20px;  /* section / sheet headlines */
+  --rl-headline-lh:   1.15;  /* @kind font */
+  --rl-headline-ls:   -0.015em;
+
+  --rl-body-size:    15px;   /* takes / reviews / paragraphs */
+  --rl-body-lh:      1.5;     /* @kind font */
+  --rl-body-ls:      0;       /* @kind font */
+
+  --rl-label-size:   14px;   /* handles, buttons, toggles */
+  --rl-label-lh:     1.2;     /* @kind font */
+
+  --rl-meta-size:    13px;   /* timestamps, secondary meta */
+  --rl-meta-lh:      1.3;     /* @kind font */
+
+  --rl-caption-size: 11px;   /* tab labels, micro-labels (MIN) */
+  --rl-caption-lh:   1.2;     /* @kind font */
+  --rl-caption-ls:   0.10em; /* tracked-out uppercase eyebrows */
+}
